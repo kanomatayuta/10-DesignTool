@@ -23,8 +23,17 @@ window.addEventListener("load", function(){
     }
   });
 
-  // Swiper実装
-  const Swipe = new Swiper(".js-menuswiper", {
+// featureSwiper実装 sp版
+  const featureSwiper = new Swiper(".js-feature-swiper", {
+    a11y:"none", //アクセシビリティ
+    navigation: {
+      nextEl: ".swiper-button-next",// 「次へ」ボタンの要素のセレクタ
+      prevEl: ".swiper-button-prev",//「前へ」ボタンの要素のセレクタ
+    },
+  });
+
+  // menuSwiper実装
+  const menuSwiper = new Swiper(".js-menuswiper", {
     loop: true,// ループ
     a11y:"none", //アクセシビリティ
     breakpoints: {

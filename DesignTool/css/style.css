@@ -611,7 +611,7 @@ body {
 .share--item-nav .swiper-button-prev, .news--item-nav .swiper-button-prev {
   margin-right: 10px;
 }
-.share--card-thumbnail {
+.share--card-thumbnail ,.card__news--thumbnail{
   position: relative;
   margin: 0;
   padding-top: 66.6%;
@@ -758,13 +758,6 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-}
-.card__news--thumbnail {
-  position: relative;
-  margin: 0;
-  padding-top: 66.6%;
-  overflow: hidden;
-  border-radius: 10px;
 }
 .card__news--thumbnail .bg-1{
   background-image: url(https://placehold.jp/658x340.png?text=sample1);
@@ -1119,10 +1112,7 @@ body {
     margin-bottom: 0;
   }
   /* features */
-  .features--slider {
-    position: relative;
-  }
-  .features--slider-slide{
+  .features--slide{
     width: 100%;
     margin-right: 0;
   }
@@ -1153,9 +1143,17 @@ body {
     padding: 0 30px;
   }
   .features--item-heading {
-    color: #fadd13;
     font-size: 2rem;
     font-weight: 700;
+  }
+  .item-1-sp .features--item-heading {
+    color: #fadd13;
+  }
+  .item-2-sp .features--item-heading {
+    color: #e4b3b6;
+  }
+  .item-3-sp .features--item-heading {
+    color: #d58f75;
   }
   .features--item-desc {
     margin-top: 15px;
