@@ -88,4 +88,35 @@ window.addEventListener("load", function(){
     speed: 2000, // ２秒かけながら次の画像へ移動
     allowTouchMove: false, // マウスでのスワイプを禁止
   });
+
+
+  // shopタブメニュー 切り替え実装
+  const tabTriggers = document.querySelectorAll('.js-tab-trigger');// タブメニュークラス'.js-tab-trigger'を持つ要素を取得
+  const tabTargets = document.querySelectorAll('.js-tab-target');// タブコンテンツクラス'.js-tab-target'を持つ要素を取得
+  for (let count = 0; count < tabTriggers.length; count++) {// 要素の数の分だけループ処理をして値を取り出す
+    tabTriggers[count].addEventListener('click', (event) => {// タブメニュークリック時
+      let currentMenu = event.currentTarget;// クリックされた要素（メニュー要素[トリガー要素]）を取得
+      let currentContent = document.getElementById(currentMenu.dataset.id);// ターゲットとなる要素（タブメニューdata属性値と等しいid値を持つコンテンツ要素[ターゲット要素]）を取得
+      for (let count = 0; count < tabTriggers.length; count++) {// すべてのタブメニューの'tab-active'クラスを削除
+        tabTriggers[count].classList.remove('tab-active');
+      }
+      currentMenu.classList.add('tab-active');// クリックしたタブメニューに'tab-active'クラスを追加
+      for (let count = 0; count < tabTargets.length; count++) {// タブコンテンツを非アクティブにする
+        tabTargets[count].classList.remove('tab-active');
+      }
+      if(currentContent !== null) {// 対象コンテンツ(指定したIDの要素があったら)を表示させる
+        currentContent.classList.add('tab-active');
+      }
+    });
+    // color-active 切り替え実装
+    const targetOn = document.getElementById('js-color-on');// タブメニューid'.js-tcolor-on'を持つ要素を取得
+    const targetOff = document.getElementById('js-color-off');// タブメニューid'.js-tcolor-off'を持つ要素を取得
+    const targetColor = document.getElementById('shop');// タブメニューid'.shop'を持つ要素を取得
+    targetOn.addEventListener('click', function(){// onをクリック時
+      targetColor.classList.add('color-active');// クリックしたタブメニューに'color-active'クラスを追加
+    });
+    targetOff.addEventListener('click', function(){// offをクリック時
+      targetColor.classList.remove('color-active');// クリックしたタブメニューに'color-active'クラスを削除
+    });
+  }
 });

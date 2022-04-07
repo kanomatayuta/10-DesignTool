@@ -655,6 +655,9 @@ body {
 .shop--wrapper {
   padding: 120px 0 88px;
 }
+.shop--elem{
+  opacity: .3;
+}
 .shop--elem .locale {
   font-size: 1.25rem;
   font-weight: 700;
@@ -688,6 +691,37 @@ body {
   height: 100%;
   border: 0;
 }
+/* タブコンテンツ */
+#shop .tab-content__item {
+  display: none;
+}
+#shop .tab-content__item.tab-active {
+  display: block;
+}
+/* tabuメニューアクティブ */
+.shop--elem.tab-active {
+  opacity: 1;
+}
+
+/* JS切り替え */
+/* カラーアクティブ */
+#shop.color-active{
+  background-color: #394960;
+  color: #fff;
+  border-color: #fff;
+}
+#shop.color-active .shop--nav-item:not(:first-of-type){
+  border-color: #fff;
+}
+#shop.color-active .title__primary--ja:before {
+  background-color: #fff;
+}
+#shop.color-active .btn__primary--wrapper:before {
+  background-color: #554c49;
+}
+#shop.color-active .btn__primary--wrapper {
+  color: #fff;
+}
 
 /* ショップテキスト */
 .shop--item-info {
@@ -715,13 +749,6 @@ body {
   margin-top: 32px;
 }
 
-/* JS切り替え */
-.tab1{
-  display: block;
-}
-.tab2{
-  display: none;
-}
 
 
 /* フランチャイルズオーナー募集 ボタン*/
@@ -1273,8 +1300,17 @@ body {
     font-weight: 700;
   }
   /* shop */
-  .shop--item-primary .col:not(:first-of-type){
+  .shop--item-primary .md-6:not(:first-of-type){
     margin-top: 16px;
+  }
+  .shop--item-list dt {
+    flex: 0 0 80px;
+    max-width: 80px;
+  }
+  .shop--item-list dd {
+    flex-basis: calc(100% - 80px);
+    max-width: calc(100% - 80px);
+    padding-left: 10px;
   }
 }
 @media (max-width: 575px){
