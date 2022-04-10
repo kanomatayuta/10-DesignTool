@@ -1,16 +1,17 @@
-// ページが完全に読み込まれたとき発生
+/*----------------------------
+*　ページが完全に読み込まれたとき発生
+*----------------------------*/
 window.addEventListener("load", function(){
-  // 横スクロール実装
+/*----------------------------
+*　横スクロール実装　gsap
+*----------------------------*/
   gsap.registerPlugin(ScrollTrigger);// プラグインを定義
   const area  = document.querySelector(".js-scroll__area");// 変数areaにjs-scroll__areaを代入
   const list  = document.querySelector(".js-scroll__list");// 変数listにjs-scroll__listを代入
   const items = document.querySelectorAll(".js-scroll__item");// 変数itemsにjs-scroll__itemを代入
   const num   = items.length;// 変数numにitemsのを代入
-
-  // 横幅を指定
-  gsap.set(list,  { width: num * 100 + "%" });
-  gsap.set(items, { width: 100 / num + "%" });
-
+  gsap.set(list,  { width: num * 100 + "%" });// 横幅を指定
+  gsap.set(items, { width: 100 / num + "%" });// 横幅を指定
   gsap.to(items, {
     xPercent: -100 * ( num - 1 ), // x方向に移動させる
     ease: "none", //イージング
@@ -23,7 +24,9 @@ window.addEventListener("load", function(){
     }
   });
 
-// featureSwiper実装 sp版
+/*----------------------------
+*　 featureSwiper実装 sp版
+*----------------------------*/
   const featureSwiper = new Swiper(".js-feature-swiper", {
     a11y:"none", //アクセシビリティ
     navigation: {
@@ -32,30 +35,32 @@ window.addEventListener("load", function(){
     },
   });
 
-  // menuSwiper実装
+/*----------------------------
+*　 menuSwiper実装
+*----------------------------*/
   const menuSwiper = new Swiper(".js-menuswiper", {
     loop: true,// ループ
     a11y:"none", //アクセシビリティ
     breakpoints: {
-      475: {
-        slidesPerView: 1,// 475px以上の場合
+      475: {// 475px以上の場合
+        slidesPerView: 1,// 横幅
         spaceBetween: 20,// 隣同士の余白
       },
-      575: {
-        slidesPerView: 1.2,// 575px以上の場合
-        spaceBetween: 20,// 隣同士の余白
+      575: {// 575px以上の場合
+        slidesPerView: 1.2,
+        spaceBetween: 20,
       },
-      757: {
-        slidesPerView: 1.5,// 757px以上の場合
-        spaceBetween: 24,// 隣同士の余白
+      757: {// 757px以上の場合
+        slidesPerView: 1.5,
+        spaceBetween: 24,
       },
-      991: {
-        slidesPerView: 2,// 991px以上の場合
-        spaceBetween: 40,// 隣同士の余白
+      991: {// 991px以上の場合
+        slidesPerView: 2,
+        spaceBetween: 40,
       },
-      1200: {
-        slidesPerView: 3,// 1200px以上の場合
-        spaceBetween: 40,// 隣同士の余白
+      1200: {// 1200px以上の場合
+        slidesPerView: 3,
+        spaceBetween: 40,
       }
     },
     pagination: {
@@ -68,29 +73,32 @@ window.addEventListener("load", function(){
     }
   });
 
-  // fadeSwiper実装
-  const fadeSwiper = new Swiper(".js-fadeswiper", {
-    slidesPerView: 1,// 1200px以上の場合
-    a11y:"none", // アクセシビリティ
-    autoplay: {
-      delay: 1000, // 1.5秒後削除
-      disableOnInteraction: false // ユーザー操作後に自動再生を再開する
-    },
-    effect: "fade", // フェードのエフェクト
-    autoplay: {
-      delay: 3000, // 3秒後に次の画像へ
-      disableOnInteraction: false // ユーザー操作後に自動再生を再開する
-    },
-    pagination: {
-      el: ".fadeswiper-pagination",// ページ付け」ボタンの要素のセレクタ
-      clickable: true,// クリックを有効
-    },
-    speed: 2000, // ２秒かけながら次の画像へ移動
-    allowTouchMove: false, // マウスでのスワイプを禁止
-  });
+/*----------------------------
+*　 fadeSwiper実装
+*----------------------------*/
+const fadeSwiper = new Swiper(".js-fadeswiper", {
+  slidesPerView: 1,
+  a11y:"none", // アクセシビリティ
+  autoplay: {
+    delay: 1500, // 1.5秒後削除
+    disableOnInteraction: false // ユーザー操作後に自動再生を再開する
+  },
+  effect: "fade", // フェードのエフェクト
+  autoplay: {
+    delay: 3000, // 3秒後に次の画像へ
+    disableOnInteraction: false // ユーザー操作後に自動再生を再開する
+  },
+  pagination: {
+    el: ".fadeswiper-pagination",// ページ付け」ボタンの要素のセレクタ
+    clickable: true,// クリックを有効
+  },
+  speed: 2000, // ２秒かけながら次の画像へ移動
+  allowTouchMove: false, // マウスでのスワイプを禁止
+});
 
-
-  // shopタブメニュー 切り替え実装
+/*----------------------------
+*　shopタブメニュークリック時切り替え
+*----------------------------*/
   const tabTriggers = document.querySelectorAll('.js-tab-trigger');// タブメニュークラス'.js-tab-trigger'を持つ要素を取得
   const tabTargets = document.querySelectorAll('.js-tab-target');// タブコンテンツクラス'.js-tab-target'を持つ要素を取得
   for (let count = 0; count < tabTriggers.length; count++) {// 要素の数の分だけループ処理をして値を取り出す
@@ -108,7 +116,9 @@ window.addEventListener("load", function(){
         currentContent.classList.add('tab-active');
       }
     });
-    // color-active 切り替え実装
+    /*----------------------------
+    *　shop backcoloカラー 切り替え実装
+    *----------------------------*/
     const targetOn = document.getElementById('js-color-on');// タブメニューid'.js-tcolor-on'を持つ要素を取得
     const targetOff = document.getElementById('js-color-off');// タブメニューid'.js-tcolor-off'を持つ要素を取得
     const targetColor = document.getElementById('shop');// タブメニューid'.shop'を持つ要素を取得
@@ -117,6 +127,77 @@ window.addEventListener("load", function(){
     });
     targetOff.addEventListener('click', function(){// offをクリック時
       targetColor.classList.remove('color-active');// クリックしたタブメニューに'color-active'クラスを削除
+    });
+  }
+
+/*----------------------------
+*　ナビをクリック時にターゲットまでスムーススクロールする実装
+*----------------------------*/
+  const smoothScrollTrigger = document.querySelectorAll('a[href^="#"]');//a href="#{id名}"となっているものを全て取得
+  for (let count = 0; count < smoothScrollTrigger.length; count++){//ループ処理でsmoothScrollTriggerの数だけ繰り返す
+    smoothScrollTrigger[count].addEventListener('click', (event) => {//一つ一つに対してクリックイベントを起こす
+      event.preventDefault();// デフォルトの動作をキャンセルしスムースクロールする。
+      let href = smoothScrollTrigger[count].getAttribute('href');// href=””の中身を取得。
+      let targetElement = document.getElementById(href.replace('#', ''));// #を除く.ジャンプする先のid名を抜き出すことができる.
+      const rect = targetElement.getBoundingClientRect().top;// ブラウザからの高さを取得
+      const offset = window.pageYOffset;// ブラウザからの高さを取得
+      const target = rect + offset// ウィンドウからターゲットまでの距離を取得
+      window.scrollTo({
+        top: target,//targetの位置
+        behavior: 'smooth',//スムースでスクロール
+      });
+    });
+  }
+
+/*----------------------------
+* スクロール時のヘッダー部分の実装
+*----------------------------*/
+  window.addEventListener('scroll', function() {// スクロールしたときに処理を実行
+    const scrollY = window.pageYOffset;//垂直方向のスクロール量の取得
+    const target = document.getElementById('js-target-begin'); //id名(js-target-begin)を取得
+    const targetClientRectMiddl= document.getElementById('js-target-middle').getBoundingClientRect().top;//(js-target-middle)の表示領域の左上を(0, 0)として、そこからの相対位置で表示
+    const targetYMiddl = scrollY + targetClientRectMiddl -300;//基準のスクロール値を取得(絶対位置:値は固定)300手前
+    const targetClientRectEnd = document.getElementById('js-target-end').getBoundingClientRect().top;//(js-target-end)の表示領域の左上を(0, 0)として、そこからの相対位置で表示
+    const triggerYEnd = scrollY + targetClientRectEnd;//基準のスクロール値を取得(絶対位置:値は固定)
+    if(scrollY > 0) {//垂直方向のスクロール量が０より大き場合
+      target.classList.add('common');//class(common)を追加
+    } else if(scrollY === 0) {//垂直方向のスクロール量が０場合
+      target.classList.remove('common');//class(common)を削除
+      target.classList.remove('middle');//class(middle)を削除
+    }
+    if(scrollY > targetYMiddl) {//垂直方向のスクロール量がtargetYMiddlより大きい場合
+      target.classList.add('middle');//class(middle)を追加
+    }else{//垂直方向のスクロール量がtargetYMiddlより小さい場合
+      target.classList.remove('middle');//class(middle)を削除
+    }
+    if(scrollY > triggerYEnd){//垂直方向のスクロール量がtargetYEndより大きい場合
+      target.classList.remove('middle');//class(middle)を削除
+    }
+  });
+
+/*----------------------------
+* hamburger-navの実装　SP版
+*----------------------------*/
+  const hamburger = document.getElementById('js-hamburger');//'hamburger'要素を取得
+  const blackBg = document.getElementById('js-drawer');//'drawer'要素を取得
+  // hamburgerアイコン部分
+  hamburger.addEventListener('click', function(){ //'hamburger'要素をクリック時イベントを実行
+    this.classList.toggle('active');//'hamburger'要素にactiveを追加　toggleボタン
+    blackBg.classList.toggle('active');//'drawer'要素にis-activeを追加　toggleボタン
+  });
+  // drawer時のナビをスライドイン
+  const slideStr = document.getElementsByClassName("drawer__nav--str");//'drawer__nav--str'要素を取得
+  for (let count = 0; count < slideStr.length; count++) {//'drawer__nav--str'要素の数分だけ繰り返す
+    hamburger.addEventListener('click', function(){//'hamburger'要素をクリック時イベントを実行
+      slideStr[count].classList.add("slide-in")//'drawer__nav--str'要素に’slide-in’クラスを追加
+    });
+  }
+  // drawer時のnav--item（文字）の実装
+  const navItem = document.getElementsByClassName("drawer__nav--item");//'drawer__nav--item'要素を取得
+  for (let count = 0; count < navItem.length; count++) {//'drawer__nav--item'要素の数分だけ繰り返す
+    navItem[count].addEventListener('click', function(){//'drawer__nav--item'要素をクリック時イベントを実行
+      hamburger.classList.remove('active'); //'hamburger'要素の’active’消去
+      blackBg.classList.remove('active'); //'drawer'要素の’-active’消去
     });
   }
 });

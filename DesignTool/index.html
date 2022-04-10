@@ -11,27 +11,21 @@
 </head>
 
 <body>
-  <!-- sp版 hamburger 991px以下-->
-  <button id="hamburger" class="hamburger">
-    <span class="hamburger__bar top"></span>
-    <span class="hamburger__bar"></span>
-    <span class="hamburger__bar bottom"></span>
-  </button>
 
   <!-- sp版 drawer 991px以下-->
-  <nav class="drawer">
+  <nav class="drawer" id="js-drawer">
     <div class="container drawer__container">
       <div class="drawer__wrapper">
         <div class="drawer__logo">
-          <a href="#" class="drawer__nav--link">
-            <img src="https://placehold.jp/50x50.png" alt="YORKYS Creperie">
+          <a href="" class="drawer__nav--link">
+            <img src="https://placehold.jp/100x100.png" alt="YORKYS Creperie">
           </a>
         </div>
         <div class="row">
-          <div class="col-sm-6">
+          <div class="sm-6">
             <ul class="drawer__nav">
               <li class="drawer__nav--item">
-                <a href="#" class="drawer__nav--link">
+                <a href="#concept-sp" class="drawer__nav--link">
                   <span class="drawer__nav--str">
                     <div class="en">Concept</div>
                     <div class="ja">コンセプト</div>
@@ -39,7 +33,7 @@
                 </a>
               </li>
               <li class="drawer__nav--item">
-                <a href="#" class="drawer__nav--link">
+                <a href="#features-sp" class="drawer__nav--link">
                   <span class="drawer__nav--str">
                     <div class="en">Features</div>
                     <div class="ja">クレープへのこだわり</div>
@@ -47,7 +41,7 @@
                 </a>
               </li>
               <li class="drawer__nav--item">
-                <a href="#" class="ldrawer__nav--link">
+                <a href="#menu" class="drawer__nav--link">
                   <span class="drawer__nav--str">
                     <div class="en">Menu</div>
                     <div class="ja">メニュー</div>
@@ -55,7 +49,7 @@
                 </a>
               </li>
               <li class="drawer__nav--item">
-                <a href="#" class="drawer__nav--link">
+                <a href="#shop" class="drawer__nav--link">
                   <span class="drawer__nav--str">
                     <div class="en">Shop</div>
                     <div class="ja">ショップ情報</div>
@@ -63,7 +57,7 @@
                 </a>
               </li>
               <li class="drawer__nav--item">
-                <a href="#" class="drawer__nav--link">
+                <a href="#news" class="drawer__nav--link">
                   <span class="drawer__nav--str">
                     <div class="en">News</div>
                     <div class="ja">ニュース</div>
@@ -71,7 +65,7 @@
                 </a>
               </li>
               <li class="drawer__nav--item">
-                <a href="#" class="drawer__nav--link">
+                <a href="" class="drawer__nav--link">
                   <span class="drawer__nav--str">
                     <div class="en">Franchise</div>
                     <div class="ja">フランチャイズオーナー募集</div>
@@ -79,7 +73,7 @@
                 </a>
               </li>
               <li class="drawer__nav--item">
-                <a href="#" class="drawer__nav--link">
+                <a href="" class="drawer__nav--link">
                   <span class="drawer__nav--str">
                     <div class="en">Contact</div>
                     <div class="ja">お問い合わせ</div>
@@ -96,40 +90,54 @@
     </div>
   </nav>
 
+  <!-- scroll target -->
+  <div id="js-target-begin">
+  <!-- sp版 hamburger 991px以下-->
+  <button class="hamburger" id="js-hamburger">
+    <span class="hamburger__bar top"></span>
+    <span class="hamburger__bar mid"></span>
+    <span class="hamburger__bar bottom"></span>
+  </button>
+
   <!-- header -->
   <header id="header">
+
+    <div class="header-bg">
+      <div class="header-bg-el color" id="header-bg"></div>
+
     <div class="header__wrapper">
       <!-- header logo -->
-      <h1 id="header__logo">
-        <a href="#" class="header__logo--link">
-          <img src="https://placehold.jp/ffffff/000000/200x200.png?text=logo-big" alt="YORKYS Creperie" class="logo-big">
-          <img src="https://placehold.jp/ffffff/000000/48x48.png?text=logo-sma" alt="YORKYS Creperie" class="logo-sma">
+      <h1 class="header__logo">
+        <a href="" class="header__logo--link">
+          <img src="https://placehold.jp/554c49/ffffff/200x200.png?text=logo-big" alt="YORKYS Creperie" class="logo-big">
+          <img src="https://placehold.jp/554c49/ffffff/48x48.png?text=logo-sma" alt="YORKYS Creperie" class="logo-small">
         </a>
       </h1>
       <!-- global nav -->
       <nav id="global__nav">
         <ul class="global__nav--list">
-          <li class="global__item"><a href="#concept" class="global__item--link"><span>Concept</span></a></li>
-          <li class="global__item"><a href="#features" class="global__item--link"><span>Features</span></a></li>
+          <li class="global__item"><a href="#concept-pc" class="global__item--link"><span>Concept</span></a></li>
+          <li class="global__item"><a href="#features-pc" class="global__item--link"><span>Features</span></a></li>
           <li class="global__item"><a href="#menu" class="global__item--link"><span>Menu</span></a></li>
           <li class="global__item"><a href="#shop" class="global__item--link"><span>Shop</span></a></li>
           <li class="global__item"><a href="#news" class="global__item--link"><span>News</span></a></li>
-          <li class="global__item"><a href="#" class="global__item--link"><span>Contact</span></a></li>
+          <li class="global__item"><a href="" class="global__item--link"><span>Contact</span></a></li>
         </ul>
       </nav>
       <!-- sns -->
       <div id="sns__nav">
         <ul class="sns__nav--list">
           <li class="sns__nav--item">
-            <a href="#" class="sns__nav--item-link">
+            <a href="" class="sns__nav--item-link">
               <i class="sns__icon fa-brands fa-instagram"></i>
             </a>
           </li>
         </ul>
       </div>
     </div>
+    </div>
   </header>
-
+</div>
   <!-- main -->
   <main id="main">
     <!-- hero ファーストビュー -->
@@ -146,9 +154,10 @@
       </div>
     </div>
 
+
     <!-- pc版 concept ,features 992px以上-->
-    <section class="concept js-scroll__area" id="concept-features-pc">
-      <ul class="concept__list js-scroll__list">
+    <section class="concept js-scroll__area" id="concept-pc">
+      <ul class="concept__list js-scroll__list" id="js-target-middle">
         <li class="concept__item js-scroll__item item-1">
           <div class="concept--item-wrapper">
             <div class="container sec--container">
@@ -182,7 +191,7 @@
           </div>
         </li>
 
-        <li class="concept__item js-scroll__item item-2" id="features">
+        <li class="concept__item js-scroll__item item-2" id="features-pc">
           <div class="concept--item-wrapper">
             <div class="container sec--container">
               <div class="title__primary">
@@ -212,7 +221,7 @@
           </div>
         </li>
 
-        <li class="concept__item js-scroll__item item-3">
+        <li class="concept__item js-scroll__item item-3" id="js-target-end">
           <div class="concept--item-wrapper">
             <div class="container sec--container">
               <div class="title__primary">
@@ -276,7 +285,7 @@
 
 
     <!-- sp版 concept 991px以下-->
-    <section class="concept-sp" id="cencept-sp">
+    <section class="concept" id="concept-sp">
       <div class="sec--wrapper concept--wrapper">
         <div class="container sec--container">
           <div class="concept--container">
@@ -310,7 +319,6 @@
       </div>
       </div>
     </section>
-
     <!-- sp版 features 991px以下-->
     <section class="features" id="features-sp">
       <div class="swiper js-feature-swiper">
@@ -390,7 +398,6 @@
         </div>
       </div>
     </section>
-
     <!-- menu -->
     <section class="menu" id="menu">
       <div class="menu--wrapper">
@@ -861,7 +868,7 @@
     <section class="menulist">
       <div class="container sec--container">
         <div class="btn__primary menulist--btn">
-          <a href="#" class="btn__primary--wrapper menulist--btn-wrapper">
+          <a href="" class="btn__primary--wrapper menulist--btn-wrapper">
             <div class="btn__primary--ja">メニュー一覧へ</div>
             <div class="btn__primary--sub">
               <div class="btn__primary--en">Check our menu</div>
@@ -980,7 +987,7 @@
                   </li>
 
                   <div class="btn__primary shop--btn">
-                    <a href="#" class="btn__primary--wrapper">
+                    <a href="" class="btn__primary--wrapper">
                       <div class="btn__primary--ja">フランチャイズオーナー募集</div>
                       <div class="btn__primary--sub">
                         <div class="btn__primary--en">Where is the next?</div>
@@ -1020,7 +1027,7 @@
             <ul class="swiper-wrapper">
               <li class="swiper-slide">
                 <article class="card__news">
-                  <a href="#" class="card__news--wrapper"></a>
+                  <a href="" class="card__news--wrapper"></a>
                   <figure class="card__news--thumbnail">
                     <div class="img bg-1"></div>
                   </figure>
@@ -1030,7 +1037,7 @@
               </li>
               <li class="swiper-slide">
                 <article class="card__news">
-                  <a href="#" class="card__news--wrapper"></a>
+                  <a href="" class="card__news--wrapper"></a>
                   <figure class="card__news--thumbnail">
                     <div class="img bg-2"></div>
                   </figure>
@@ -1040,7 +1047,7 @@
               </li>
               <li class="swiper-slide">
                 <article class="card__news">
-                  <a href="#" class="card__news--wrapper"></a>
+                  <a href="" class="card__news--wrapper"></a>
                   <figure class="card__news--thumbnail">
                     <div class="img bg-3"></div>
                   </figure>
@@ -1056,7 +1063,7 @@
         <!-- お知らせ一覧へ -->
         <div class="container sec--container">
           <div class="btn__primary news--btn">
-            <a href="#" class="btn__primary--wrapper">
+            <a href="" class="btn__primary--wrapper">
               <div class="btn__primary--ja">お知らせ一覧へ</div>
               <div class="btn__primary--sub">
                 <div class="btn__primary--en">View all news</div>
@@ -1081,13 +1088,13 @@
             <div class="row footer-content">
               <div class="lg-5">
                 <div class="footer__logo">
-                  <a href="#">
+                  <a href="">
                     <img src="https://placehold.jp/200x200.png?text=logo" alt="YORKYS Creperie">
                   </a>
                 </div>
                 <div class="footer__logo--group">
                   <span class="note">Our group</span>
-                  <a href="#" class="group-logo">
+                  <a href="" class="group-logo">
                     <img src="https://placehold.jp/137x67.png?text=logo" alt="YORKYS BRUNCH">
                   </a>
                 </div>
@@ -1097,9 +1104,9 @@
                   <div class="lg-6">
                     <div class="footer__nav">
                       <ul class="footer__nav--list">
-                        <li><a href="#" class="footer__nav--link"><span>TOP</span></a></li>
-                        <li><a href="#concept" class="footer__nav--link"><span>CONCEPT</span></a></li>
-                        <li><a href="#features" class="footer__nav--link"><span>FEATURES</span></a></li>
+                        <li><a href="" class="footer__nav--link"><span>TOP</span></a></li>
+                        <li><a href="#concept-pc" class="footer__nav--link"><span>CONCEPT</span></a></li>
+                        <li><a href="#features-pc" class="footer__nav--link"><span>FEATURES</span></a></li>
                         <li><a href="#menu" class="footer__nav--link"><span>MENU</span></a></li>
                       </ul>
                     </div>
@@ -1108,9 +1115,9 @@
                     <div class="footer__nav">
                       <ul class="footer__nav--list">
                         <li><a href="#shop" class="footer__nav--link"><span>SHOP</span></a></li>
-                        <li><a href="#news/" class="footer__nav--link"><span>NEWS</span></a></li>
-                        <li><a href="#franchise/" class="footer__nav--link"><span>FRANCHISE</span></a></li>
-                        <li><a href="#" class="footer__nav--link"><span>CONTACT</span></a></li>
+                        <li><a href="#news" class="footer__nav--link"><span>NEWS</span></a></li>
+                        <li><a href="" class="footer__nav--link"><span>FRANCHISE</span></a></li>
+                        <li><a href="" class="footer__nav--link"><span>CONTACT</span></a></li>
                       </ul>
                     </div>
                   </div>
@@ -1121,13 +1128,13 @@
           <!-- sp版 footer 991px以下-->
           <div class="footer__top--sp">
             <div class="footer__logo">
-              <a href="#">
+              <a href="">
                 <img src="https://placehold.jp/110x110.png?text=logo" alt="YORKYS Creperie">
               </a>
             </div>
             <div class="footer__logo--group">
               <span class="note">Our group</span>
-              <a href="#" class="group-logo">
+              <a href="" class="group-logo">
                 <img src="https://placehold.jp/88x30.png?text=logo" alt="YORKYS BRUNCH">
               </a>
             </div>
