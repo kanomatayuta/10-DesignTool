@@ -229,7 +229,7 @@ body {
 /*----------------------------
 *  sp版  非表示
 *----------------------------*/
-#js-hamburger,.drawer,#concept-sp,#features-sp,.footer__top--sp{
+#js-hamburger-menu,.drawer,#concept-sp,#features-sp,.footer__top--sp{
   display: none;
 }
 
@@ -580,9 +580,6 @@ body {
   padding-top: 24px;
   line-height: 2;
 }
-.menu--card-text p{
-  font-weight: 400;
-}
 .menu--slider-pagination {
   display: flex;
   margin-top: 20px;
@@ -767,6 +764,33 @@ body {
   height: 100%;
   border: 0;
 }
+/*----------------------------
+*  ショップテキスト
+*----------------------------*/
+.shop--item-info {
+  margin-top: 40px;
+}
+.shop--item-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+.shop--item-list dt {
+  flex: 0 0 150px;
+  max-width: 150px;
+  font-weight: 700;
+}
+.shop--item-list dd {
+  flex-basis: calc(100% - 150px);
+  flex-grow: 0;
+  flex-shrink: 0;
+  max-width: calc(100% - 150px);
+  margin-bottom: 0;
+  padding-left: 20px;
+}
+.shop--item-list:not(:first-of-type) {
+  margin-top: 32px;
+}
 
 /*----------------------------
 *  shopカラーアクティブ　JS
@@ -798,34 +822,6 @@ body {
 }
 #shop.color-active .btn__primary--wrapper {
   color: #fff;
-}
-
-/*----------------------------
-*  ショップテキスト
-*----------------------------*/
-.shop--item-info {
-  margin-top: 40px;
-}
-.shop--item-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 0;
-}
-.shop--item-list dt {
-  flex: 0 0 150px;
-  max-width: 150px;
-  font-weight: 700;
-}
-.shop--item-list dd {
-  flex-basis: calc(100% - 150px);
-  flex-grow: 0;
-  flex-shrink: 0;
-  max-width: calc(100% - 150px);
-  margin-bottom: 0;
-  padding-left: 20px;
-}
-.shop--item-list:not(:first-of-type) {
-  margin-top: 32px;
 }
 
 /*----------------------------
@@ -1142,7 +1138,7 @@ body {
 /*----------------------------
 *  sp版 表示
 *----------------------------*/
-  #js-hamburger, #cencept-sp, #features-sp, .footer__top--sp{
+  #js-hamburger-menu, #cencept-sp, #features-sp, .footer__top--sp{
     display: block;
   }
   /* 共通 */
@@ -1484,6 +1480,10 @@ body {
   .menu--wrapper {
     padding: 100px 0;
   }
+  .menu--card {
+    padding: 24px;
+    border: 2px solid #fadd13;
+  }
 /*----------------------------
 * share
 *----------------------------*/
@@ -1600,7 +1600,7 @@ body {
 /*----------------------------
 * drawerの実装　SP版
 *----------------------------*/
-  .drawer.active{
+  .active .drawer{
     opacity: 1;
     transform: scale(1);
     -webkit-transform: scale(1); /*Chrome, Safari対応*/
@@ -1640,6 +1640,19 @@ body {
   }
   .concept--text span {
     font-size: .75rem;
+  }
+/*----------------------------
+* menu
+*----------------------------*/
+  .menu--card-text {
+    padding-top: 12px;
+    font-size: .75rem;
+  }
+/*----------------------------
+* share
+*----------------------------*/
+  .share--desc {
+    font-size: .875rem;
   }
 /*----------------------------
 * shop

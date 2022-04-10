@@ -42,13 +42,9 @@ window.addEventListener("load", function(){
     loop: true,// ループ
     a11y:"none", //アクセシビリティ
     breakpoints: {
-      475: {// 475px以上の場合
-        slidesPerView: 1,// 横幅
+      0: {// 0x以上の場合
+        slidesPerView: 1.2,// 横幅
         spaceBetween: 20,// 隣同士の余白
-      },
-      575: {// 575px以上の場合
-        slidesPerView: 1.2,
-        spaceBetween: 20,
       },
       757: {// 757px以上の場合
         slidesPerView: 1.5,
@@ -178,26 +174,24 @@ const fadeSwiper = new Swiper(".js-fadeswiper", {
 /*----------------------------
 * hamburger-navの実装　SP版
 *----------------------------*/
-  const hamburger = document.getElementById('js-hamburger');//'hamburger'要素を取得
-  const blackBg = document.getElementById('js-drawer');//'drawer'要素を取得
-  // hamburgerアイコン部分
-  hamburger.addEventListener('click', function(){ //'hamburger'要素をクリック時イベントを実行
-    this.classList.toggle('active');//'hamburger'要素にactiveを追加　toggleボタン
-    blackBg.classList.toggle('active');//'drawer'要素にis-activeを追加　toggleボタン
-  });
-  // drawer時のナビをスライドイン
+  const hamburgerBtn = document.getElementById('js-hamburger-menu');//'js-hamburger-men'要素を取得
   const slideStr = document.getElementsByClassName("drawer__nav--str");//'drawer__nav--str'要素を取得
-  for (let count = 0; count < slideStr.length; count++) {//'drawer__nav--str'要素の数分だけ繰り返す
-    hamburger.addEventListener('click', function(){//'hamburger'要素をクリック時イベントを実行
-      slideStr[count].classList.add("slide-in")//'drawer__nav--str'要素に’slide-in’クラスを追加
-    });
-  }
-  // drawer時のnav--item（文字）の実装
-  const navItem = document.getElementsByClassName("drawer__nav--item");//'drawer__nav--item'要素を取得
-  for (let count = 0; count < navItem.length; count++) {//'drawer__nav--item'要素の数分だけ繰り返す
-    navItem[count].addEventListener('click', function(){//'drawer__nav--item'要素をクリック時イベントを実行
-      hamburger.classList.remove('active'); //'hamburger'要素の’active’消去
-      blackBg.classList.remove('active'); //'drawer'要素の’-active’消去
-    });
-  }
+  let flag = false; //falseをおく
+
+  hamburgerBtn.addEventListener('click', function(){//hamburgerBtnクリック時
+    if (!flag) { //falseならば
+      hamburgerBtn.classList.add('active');//要素にactiveを追加
+      for(let count = 0; count < slideStr.length; count++){//ループ処理でslideStrの数だけ繰り返す
+        slideStr[count].classList.add('slide-in');//要素にslide-inを追加
+      }
+      flag = true;//実行したら、flagにtrueをおく。次,ボタン押すとtrueの場合の処理になる
+    } else { //trueならば
+      hamburgerBtn.classList.remove('active');//要素にactiveを追加
+      for(let count = 0; count < slideStr.length; count++){//ループ処理でslideStrの数だけ繰り返す
+        slideStr[count].classList.remove('slide-in');//要素のslide-inを削除
+      }
+      flag = false; //実行したら、flagにfalseをおく。次、ボタン押すとfalseの場合の処理になる
+    }
+  });
+
 });
