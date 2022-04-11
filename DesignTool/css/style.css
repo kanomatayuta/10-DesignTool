@@ -227,6 +227,27 @@ body {
 }
 
 /*----------------------------
+*  nav(globalとfooter) focus,hover
+*----------------------------*/
+.global__item--link span ,.footer__nav--link span{
+  position: relative;
+}
+.global__item--link span:before ,.footer__nav--link span:before{
+  background-color: #fff;
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  transition: all .3s cubic-bezier(.19,1,.22,1);
+  transition-timing-function: cubic-bezier(.19,1,.22,1);
+}
+.global__item--link:focus span:before ,.global__item--link:hover span:before ,.footer__nav--link:focus span:before ,.footer__nav--link:hover span:before{
+  width: 100%;
+}
+
+/*----------------------------
 *  sp版  非表示
 *----------------------------*/
 #js-hamburger-menu,.drawer,#concept-sp,#features-sp,.footer__top--sp{
@@ -955,7 +976,7 @@ body {
 /*----------------------------
 * js - スクロール時のヘッダー部分の実装
 *----------------------------*/
-.common .hamburger__bar{
+.common .hamburger__bar,.common .global__item--link span:before, .footer__nav--link span:before{
   background: #554c49;
 }
 .common .global__item--link, .common .sns__icon{
@@ -1710,9 +1731,5 @@ body {
     width: 100%
   }
 }
-
-
-
-
 
 
