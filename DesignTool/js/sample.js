@@ -55,7 +55,7 @@ window.addEventListener("load", function(){
         spaceBetween: 40,
       },
       1200: {// 1200px以上の場合
-        slidesPerView: 3,
+        slidesPerView: 3.3,
         spaceBetween: 40,
       }
     },
